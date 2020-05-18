@@ -16,7 +16,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.layout.cardViewCough.setOnClickListener {
-            showMessage("Symptom item")
+            showMessage("Symptom item - Cough")
+        }
+
+        binding.layout.cardViewFever.setOnClickListener {
+            showMessage("Symptom item - Fever")
+        }
+
+        binding.layout.cardViewHeadache.setOnClickListener {
+            showMessage("Symptom item - Headache")
         }
 
         fetchPreventions()

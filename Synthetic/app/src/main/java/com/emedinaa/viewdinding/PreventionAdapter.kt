@@ -28,15 +28,15 @@ class PreventionAdapter(private var preventionList:List<Prevention>):RecyclerVie
         notifyDataSetChanged()
     }
 
-    inner class PreventionViewHolder(view:View) : RecyclerView.ViewHolder(view){
-        private val textViewTitle:TextView = view.textViewTitle
+    inner class PreventionViewHolder(private val view:View) : RecyclerView.ViewHolder(view){
+        /*private val textViewTitle:TextView = view.textViewTitle
         private val textViewDesc:TextView = view.textViewDesc
-        private val imageView:ImageView = view.imageView
+        private val imageView:ImageView = view.imageView*/
 
         fun bind(entity:Prevention){
-            textViewTitle.text = entity.title
-            textViewDesc.text = entity.desc
-            imageView.setImageResource(entity.image)
+            view.textViewTitle.text = entity.title
+            view.textViewDesc.text = entity.desc
+            view.imageView.setImageResource(entity.image)
         }
     }
 }

@@ -16,6 +16,14 @@ class MainActivity : AppCompatActivity() {
             showMessage("Symptom item - Cough")
         }
 
+        cardViewFever.setOnClickListener {
+            showMessage("Symptom item - Fever")
+        }
+
+        cardViewHeadache.setOnClickListener {
+            showMessage("Symptom item - Headache")
+        }
+
         fetchPreventions()
     }
 
