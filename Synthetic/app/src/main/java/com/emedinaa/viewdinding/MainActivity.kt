@@ -3,20 +3,17 @@ package com.emedinaa.viewdinding
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.emedinaa.viewdinding.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_symptoms.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        binding.layout.cardViewCough.setOnClickListener {
-            showMessage("Symptom item")
+        cardViewCough.setOnClickListener {
+            showMessage("Symptom item - Cough")
         }
 
         fetchPreventions()

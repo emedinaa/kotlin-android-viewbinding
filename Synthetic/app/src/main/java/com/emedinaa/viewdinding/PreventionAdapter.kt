@@ -1,17 +1,18 @@
 package com.emedinaa.viewdinding
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.emedinaa.viewdinding.databinding.RowPreventionBinding
+import kotlinx.android.synthetic.main.row_prevention.view.*
 
 class PreventionAdapter(private var preventionList:List<Prevention>):RecyclerView.Adapter<PreventionAdapter.PreventionViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, att: Int): PreventionViewHolder {
-        val itemBinding = RowPreventionBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return PreventionViewHolder(itemBinding)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_prevention,parent,false)
+        return PreventionViewHolder(view)
     }
 
     override fun onBindViewHolder(vh: PreventionViewHolder, position: Int) {
@@ -27,10 +28,10 @@ class PreventionAdapter(private var preventionList:List<Prevention>):RecyclerVie
         notifyDataSetChanged()
     }
 
-    inner class PreventionViewHolder(itemBinding:RowPreventionBinding) : RecyclerView.ViewHolder(itemBinding.root){
-        private val textViewTitle:TextView = itemBinding.textViewTitle
-        private val textViewDesc:TextView = itemBinding.textViewDesc
-        private val imageView:ImageView = itemBinding.imageView
+    inner class PreventionViewHolder(view:View) : RecyclerView.ViewHolder(view){
+        private val textViewTitle:TextView = view.textViewTitle
+        private val textViewDesc:TextView = view.textViewDesc
+        private val imageView:ImageView = view.imageView
 
         fun bind(entity:Prevention){
             textViewTitle.text = entity.title
